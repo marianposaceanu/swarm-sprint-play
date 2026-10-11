@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#343c32" />
+    <meta name="description" content="Lead a scavenger crew through ten dusty sectors. Recruit, recover salvage and outlast the warlord in Swarm Sprint." />
+    <title>Swarm Sprint — Wasteland run</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232c392d'/%3E%3Cpath d='M10 13h44v8H10zm8 12h28v14H18zm-8 19h44v7H10z' fill='%2396b879'/%3E%3Cpath d='M24 29h16v6H24z' fill='%23c9b58e'/%3E%3C/svg%3E" />
+    <script type="module" crossorigin src="./assets/index-JSDaqj-1.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-COzWLh_4.css">
+  </head>
+  <body>
+    <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4V5Zm4 3c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></symbol>
+      <symbol id="i-muted" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4V5Zm5 4 6 6m0-6-6 6"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16M8 4v6m8 4v6"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="4"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.5 2.9 5.9 6.5 1-4.7 4.5 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.5 6.5-1Z"/></symbol>
+      <symbol id="i-gem" viewBox="0 0 24 24"><path d="m5 4-4 6 11 12 11-12-4-6H5ZM1 10h22M8 4l4 18 4-18"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/></symbol>
+      <symbol id="i-retry" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z"/></symbol>
+    </defs></svg>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" id="brand-home" aria-label="Swarm Sprint home"><span class="brand-mark"><i></i><i></i><i></i></span><span>SWARM<span class="brand-dot"> / </span>SPRINT</span></a>
+        <span class="edition">SALVAGE TERMINAL / ROUTE 01</span>
+        <nav class="top-actions" aria-label="Game options">
+          <button id="help-button" class="text-button desktop-help">How to play <span>↗</span></button>
+          <button id="sound-button" class="icon-button" aria-label="Mute sound" aria-pressed="false"><svg><use href="#i-sound"/></svg></button>
+          <button id="settings-button" class="icon-button" aria-label="Settings"><svg><use href="#i-settings"/></svg></button>
+        </nav>
+      </header>
+
+      <main class="play-layout">
+        <aside class="intro">
+          <div class="eyebrow"><span class="live-dot"></span> CREW ONLINE / DUST ROAD</div>
+          <h1>SWARM<br/><span>SPRINT</span><span class="title-period">.</span></h1>
+          <p class="intro-copy">Cross the wastes.<br/>Outlast <em>the warlord.</em></p>
+          <p class="intro-description">Lead rifle scavengers through rusted salvage yards. Each lane is a choice; every recruit counts.</p>
+          <div class="how-list">
+            <div><span class="step-icon steer-icon">↔</span><p><strong>Command the lane</strong><span>Drag or use ← → / A D</span></p></div>
+            <div><span class="step-icon multiply-icon">×</span><p><strong>Call reinforcements</strong><span>Build your force at the gates</span></p></div>
+            <div><span class="step-icon conquer-icon"><svg><use href="#i-flag"/></svg></span><p><strong>Hunt from range</strong><span>Pick up weapons. Break their armor early.</span></p></div>
+          </div>
+          <div class="intro-foot"><span class="small-spark">✳</span><span>TEN SECTORS · ONE LAST RUN</span></div>
+        </aside>
+
+        <section class="game-column" aria-label="Swarm Sprint game">
+          <div id="viewport" class="viewport" data-state="home" tabindex="0">
+            <div class="scene-vignette" aria-hidden="true"></div>
+            <div class="game-hud">
+              <div class="level-chip"><span>LEVEL</span><strong id="hud-level">01 <small>/ 10</small></strong></div>
+              <div class="gem-chip" aria-label="Salvage recovered"><svg><use href="#i-gem"/></svg><strong id="hud-gems">0</strong></div>
+              <button id="fullscreen-button" class="icon-button pause-button" aria-label="Enter fullscreen" aria-pressed="false" title="Fullscreen">⛶</button>
+              <button id="pause-button" class="icon-button pause-button" aria-label="Pause game" hidden><svg><use href="#i-pause"/></svg></button>
+              <button id="map-button" class="map-button" aria-label="Choose level">···</button>
+            </div>
+            <div class="run-status" id="run-status" hidden>
+              <div class="progress-track" role="progressbar" aria-label="Distance to warlord" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><div id="progress-fill"></div></div>
+              <div class="status-line"><span id="shield-status"><svg><use href="#i-shield"/></svg> BARRIER READY</span><span class="boss-goal"><svg><use href="#i-flag"/></svg><b id="boss-target">100</b> <span id="goal-label">TO WIN</span></span></div>
+              <div class="weapon-status" id="weapon-status" aria-label="Squad cap, equipped weapon, mech bonus and volley damage">12/300 CAP · RIFLE · MECH x0 +0</div>
+            </div>
+            <div class="biome-tag" id="biome-tag">DUST ROAD</div>
+            <div id="toast" class="toast" role="status" aria-live="polite"></div>
+            <div id="effects" class="effects" aria-hidden="true"></div>
+
+            <section id="start-panel" class="start-panel">
+              <div class="start-caption"><span id="start-number">DEPLOYMENT / 01</span><span id="start-stars" class="mini-stars"></span></div>
+              <h2 id="level-name">Dust road</h2>
+              <p id="level-subtitle">Keep your crew moving.</p>
+              <button id="play-button" class="primary-button" disabled><span>ASSEMBLING FORCE</span><svg><use href="#i-arrow"/></svg></button>
+              <button id="choose-level" class="choose-button">Select a sector <span>↗</span></button>
+            </section>
+
+            <div id="steer-hint" class="steer-hint" hidden>
+              <button id="steer-left" class="steer-button" aria-label="Move to left lane">←</button>
+              <span id="steer-copy">TAP OR DRAG</span>
+              <button id="steer-right" class="steer-button" aria-label="Move to right lane">→</button>
+            </div>
+
+            <section id="result" class="result-overlay" hidden aria-labelledby="result-title">
+              <div class="result-card">
+                <span id="result-eyebrow" class="eyebrow">SECTOR SECURED</span>
+                <div id="result-stars" class="result-stars" aria-label="3 stars"></div>
+                <h2 id="result-title">Mission accomplished.</h2>
+                <p id="result-copy">The squad holds the line.</p>
+                <div class="result-stats"><div><strong id="result-survivors">0</strong><span>SQUAD STRENGTH</span></div><div><strong id="result-score">0</strong><span>POINTS</span></div><div><strong id="result-peak">0</strong><span>PEAK FORCE</span></div></div>
+                <button id="next-button" class="primary-button"><span>NEXT SECTOR</span><svg><use href="#i-arrow"/></svg></button>
+                <div class="result-links"><button id="retry-button" class="text-button"><svg><use href="#i-retry"/></svg>Redeploy</button><button id="result-home" class="text-button">All sectors ↗</button></div>
+              </div>
+            </section>
+            <section id="loading-panel" class="loading-panel" aria-labelledby="loading-title">
+              <span class="eyebrow">ASSEMBLING THE CREW</span>
+              <h2 id="loading-title">Preparing the sector</h2>
+              <progress id="loading-progress" max="100" value="0" aria-label="Game loading progress"></progress>
+              <p id="loading-status" role="status">Starting the engine…</p>
+            </section>
+            <div id="error-panel" class="error-panel" hidden><h2>A small detour.</h2><p id="error-message"></p><button class="primary-button" id="reload-button">Reload game</button></div>
+          </div>
+          <div class="game-caption"><span><i class="live-dot"></i> FIELD LINK ACTIVE</span><span id="save-status">Campaign saved on this device</span></div>
+        </section>
+
+        <aside class="journal">
+          <div class="journey-heading"><span class="eyebrow">CAMPAIGN LOG</span><button id="journey-all" class="text-button" aria-label="View all levels">↗</button></div>
+          <div class="journey-summary"><strong id="completed-count">00</strong><span>of 10 sectors<br/>secured</span></div>
+          <div id="journey-list" class="journey-list"></div>
+          <button id="journey-open" class="journey-open">Review all sectors <span>↗</span></button>
+          <div class="tip-card"><span class="eyebrow">FIELD BRIEF / CRT 01</span><span class="tip-spark">✳</span><p id="level-tip">Steer to aim at hostiles. Larger squads deal more damage. Recover weapons and destroy their armor before they reach you.</p></div>
+          <div class="star-total"><svg><use href="#i-star"/></svg><strong id="total-stars">0</strong><span>/ 30 stars collected</span></div>
+        </aside>
+      </main>
+      <footer class="page-footer"><span>DUST ROAD / SALVAGE TERMINAL</span><span>DRAG TO STEER <i>·</i> P TO PAUSE <i>·</i> WATCH YOUR CREW</span></footer>
+    </div>
+
+    <dialog id="levels-dialog" class="dialog levels-dialog" aria-labelledby="levels-title">
+      <div class="dialog-header"><span class="eyebrow">CAMPAIGN MAP</span><button class="icon-button" data-close="levels-dialog" aria-label="Close level selection"><svg><use href="#i-close"/></svg></button></div>
+      <h2 id="levels-title">Ten sectors.<br/>One final warlord.</h2>
+      <p class="dialog-intro">Secure a sector to unlock the next. Redeploy for up to three stars.</p>
+      <div id="level-grid" class="level-grid"></div>
+    </dialog>
+
+    <dialog id="pause-dialog" class="dialog small-dialog" aria-labelledby="pause-title">
+      <span class="eyebrow">OPERATION SUSPENDED</span><h2 id="pause-title">Holding position.</h2><p>Your squad will resume exactly where it stopped.</p>
+      <button id="resume-button" class="primary-button"><span>RESUME ADVANCE</span><svg><use href="#i-arrow"/></svg></button>
+      <button id="pause-retry" class="secondary-button">Restart sector</button>
+      <button id="pause-home" class="text-button">Campaign map</button>
+    </dialog>
+
+    <dialog id="settings-dialog" class="dialog small-dialog" aria-labelledby="settings-title">
+      <div class="dialog-header"><span class="eyebrow">FIELD SETTINGS</span><button class="icon-button" data-close="settings-dialog" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div>
+      <h2 id="settings-title">System configuration.</h2>
+      <label class="setting"><span><strong>Sound effects</strong><small>Weapon and reinforcement cues</small></span><input id="sound-setting" type="checkbox" role="switch" checked/></label>
+      <label class="setting"><span><strong>Low power mode</strong><small>Smaller pixel buffer, same mission</small></span><input id="quality-setting" type="checkbox" role="switch"/></label>
+      <label class="setting"><span><strong>Gentle motion</strong><small>Reduced animation and steady tracers</small></span><input id="motion-setting" type="checkbox" role="switch"/></label>
+      <p class="settings-note">Your best scores and unlocked sectors are saved automatically in this browser.</p>
+      <p class="settings-note"><strong id="engine-status">Starting performance engine…</strong><br/><span id="engine-note"></span></p>
+      <button id="reset-button" class="text-button reset-button">Reset all progress</button>
+    </dialog>
+
+    <dialog id="help-dialog" class="dialog small-dialog" aria-labelledby="help-title">
+      <div class="dialog-header"><span class="eyebrow">FIELD MANUAL</span><button class="icon-button" data-close="help-dialog" aria-label="Close instructions"><svg><use href="#i-close"/></svg></button></div>
+      <h2 id="help-title">Strength in numbers.</h2>
+      <ol class="help-list"><li><strong>Command the lane.</strong> Drag to the lane you want, tap arrows, or use ← → / A D. Your squad shoots the closest living hostile in its lane and weapon range. The warlord can be targeted from either lane.</li><li><strong>Recruit and rearm.</strong> + adds strength, × multiplies it, − removes it; strength caps at 300. A MECH adds 20 strength and +3 damage to every volley (up to three); on losses, infantry strength goes first. Pick up a short-range heavy scattergun or long-range plasma rifle; each replaces your current gun.</li><li><strong>Kill before contact.</strong> Shots reduce real HP. A dead enemy costs no strength or shield; surviving enemies cost only their remaining armor. Saws take 35%. A barrier blocks one contact hit, but not the warlord. A ranged-killed warlord has no contact hit.</li><li><strong>Recover salvage.</strong> A defeated hostile awards +2 salvage; the warlord awards +5, once per kill. Ranged kills pay immediately. Survive the full 20–24-encounter route to finish the sector.</li></ol>
+      <p class="settings-note">P, Space, or Escape pauses a run. Switching apps pauses automatically.</p>
+      <button data-close="help-dialog" class="primary-button">GOT IT. LET'S GO.</button>
+    </dialog>
+    <div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+    <noscript><div class="noscript">Swarm Sprint needs JavaScript enabled to deploy.</div></noscript>
+  </body>
+</html>
