@@ -7,8 +7,8 @@
     <meta name="description" content="Lead a scavenger crew through ten dusty sectors. Recruit, recover salvage and outlast the warlord in Swarm Sprint." />
     <title>Swarm Sprint — Wasteland run</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232c392d'/%3E%3Cpath d='M10 13h44v8H10zm8 12h28v14H18zm-8 19h44v7H10z' fill='%2396b879'/%3E%3Cpath d='M24 29h16v6H24z' fill='%23c9b58e'/%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-l-VOrZBc.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BVB8gLwg.css">
+    <script type="module" crossorigin src="./assets/index-D-AftePM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bu0uH2vn.css">
   </head>
   <body>
     <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
@@ -123,10 +123,11 @@
     </div>
 
     <dialog id="upgrades-dialog" class="dialog upgrades-dialog" aria-labelledby="upgrades-title">
-      <div class="dialog-header"><span class="eyebrow">FIELD ARMORY / PERMANENT UPGRADES</span><button class="icon-button" data-close="upgrades-dialog" aria-label="Close upgrades"><svg><use href="#i-close"/></svg></button></div>
+      <div class="dialog-header"><span id="armory-eyebrow" class="eyebrow">FIELD ARMORY / PERMANENT UPGRADES</span><button id="upgrade-close" class="icon-button" data-close="upgrades-dialog" aria-label="Close upgrades"><svg><use href="#i-close"/></svg></button></div>
       <h2 id="upgrades-title">Make the next run count.</h2>
+      <p id="haven-status" class="haven-status" hidden></p>
       <div class="armory-bank"><span>AVAILABLE POINTS</span><strong id="upgrade-balance">0 PTS</strong></div>
-      <p class="dialog-intro">Bank your score after every completed run—even a loss. Buy once, keep the upgrade for every future deployment.</p>
+      <p id="armory-intro" class="dialog-intro">Bank your score at the safe haven and after each completed run—even a loss. Upgrades apply on your next deployment or when you leave a haven.</p>
       <div class="upgrade-grid">
         <section class="upgrade-card" aria-labelledby="damage-title">
           <div class="upgrade-heading"><h3 id="damage-title">01 / DAMAGE</h3><strong id="damage-rank">0 / 3</strong></div>
@@ -142,7 +143,7 @@
         </section>
       </div>
       <p id="upgrade-feedback" class="settings-note" role="status" aria-live="polite">Purchases apply on your next deployment.</p>
-      <button class="secondary-button" data-close="upgrades-dialog">BACK TO DEPLOYMENT</button>
+      <button id="upgrade-done" class="secondary-button">BACK TO DEPLOYMENT</button>
     </dialog>
 
     <dialog id="levels-dialog" class="dialog levels-dialog" aria-labelledby="levels-title">
@@ -175,6 +176,7 @@
       <h2 id="help-title">Strength in numbers.</h2>
       <ol class="help-list"><li><strong>Command the lane.</strong> Drag to the lane you want, tap arrows, or use ← → / A D. Your squad shoots the closest living hostile in its lane and weapon range. The warlord can be targeted from either lane.</li><li><strong>Dodge return fire.</strong> A red lane marker warns of an incoming burst. Switch lanes before it lands, or kill the shooter to cancel it. Enemy fire costs 1–6 squad strength; a barrier absorbs one burst. Dodging keeps your barrier.</li><li><strong>Recruit and rearm.</strong> + adds strength, × multiplies it, − removes it; strength caps at 300. A MECH adds 20 strength and +3 damage to every volley (up to three); on losses, infantry strength goes first. Pick up a short-range heavy scattergun or long-range plasma rifle; each replaces your current gun.</li><li><strong>Kill before contact.</strong> Shots reduce real HP. A dead enemy costs no strength or shield; surviving enemies cost only their remaining armor. Saws take 35%. A barrier blocks one hit, but not warlord contact. A ranged-killed warlord has no contact hit.</li><li><strong>Recover salvage.</strong> A defeated hostile awards +2 salvage; the warlord awards +5, once per kill. Ranged kills pay immediately. Survive the full 20–24-encounter route to finish the sector.</li></ol>
       <p class="settings-note"><strong>Watch the shoulders.</strong> Your squad fires at roadside zombies as well as its main target. Steer toward a horde to focus fire. Each zombie has 1 HP; survivors take up to 3 crew as you pass (less across the road). A barrier blocks one ambush. Clearing hordes earns kill score, not salvage.</p>
+      <p class="settings-note"><strong>Rearm halfway.</strong> Each sector takes about 2½ minutes of active play. At the safe haven, your squad stops and your score is banked. Buy upgrades, then Continue Run with the same crew. Shopping time does not advance the run; points already banked are not awarded again at the finish.</p>
       <p class="settings-note">P, Space, or Escape pauses a run. Switching apps pauses automatically.</p>
       <button data-close="help-dialog" class="primary-button">GOT IT. LET'S GO.</button>
     </dialog>
