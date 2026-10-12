@@ -7,8 +7,8 @@
     <meta name="description" content="Lead a scavenger crew through ten dusty sectors. Recruit, recover salvage and outlast the warlord in Swarm Sprint." />
     <title>Swarm Sprint — Wasteland run</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232c392d'/%3E%3Cpath d='M10 13h44v8H10zm8 12h28v14H18zm-8 19h44v7H10z' fill='%2396b879'/%3E%3Cpath d='M24 29h16v6H24z' fill='%23c9b58e'/%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-BQkL1C_R.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DRuZIyRb.css">
+    <script type="module" crossorigin src="./assets/index-KwBUUoFp.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Da4hDV1q.css">
   </head>
   <body>
     <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
@@ -28,7 +28,7 @@
 
     <div class="app-shell">
       <header class="topbar">
-        <a class="brand" href="#" id="brand-home" aria-label="Swarm Sprint home"><span class="brand-mark"><i></i><i></i><i></i></span><span>SWARM<span class="brand-dot"> / </span>SPRINT</span></a>
+        <a class="brand" href="#" id="brand-home" aria-label="Swarm Sprint home"><img class="brand-art" src="./assets/title-DfkbgXWo.webp" alt="Swarm Sprint" fetchpriority="high"/></a>
         <span class="edition">FIELD TERMINAL / ROUTE 01</span>
         <nav class="top-actions" aria-label="Game options">
           <button id="help-button" class="text-button desktop-help">How to play <span>↗</span></button>
@@ -40,7 +40,7 @@
       <main class="play-layout">
         <aside class="intro">
           <div class="eyebrow"><span class="live-dot"></span> CREW ONLINE / DUST ROAD</div>
-          <h1>SWARM<br/><span>SPRINT</span><span class="title-period">.</span></h1>
+          <h1 class="illustrated-title"><img src="./assets/title-DfkbgXWo.webp" alt="Swarm Sprint"/></h1>
           <p class="intro-copy">Cross the wastes.<br/>Outlast <em>the warlord.</em></p>
           <p class="intro-description">Lead rifle scavengers through rusted salvage yards. Each lane is a choice; every recruit counts.</p>
           <div class="how-list">
@@ -112,7 +112,7 @@
         </section>
 
         <aside class="journal">
-          <div class="journey-heading"><span class="eyebrow">CAMPAIGN LOG</span><button id="journey-all" class="text-button" aria-label="View all levels">↗</button></div>
+          <div class="journey-heading"><h2 class="art-heading campaign-art"><img src="./assets/campaign-aMk370Ao.webp" alt="Campaign log" loading="lazy"/></h2><button id="journey-all" class="text-button" aria-label="View all levels">↗</button></div>
           <div class="journey-summary"><strong id="completed-count">00</strong><span>of 10 sectors<br/>secured</span></div>
           <div id="journey-list" class="journey-list"></div>
           <button id="journey-open" class="journey-open">Review all sectors <span>↗</span></button>
@@ -125,7 +125,8 @@
 
     <dialog id="upgrades-dialog" class="dialog upgrades-dialog" aria-labelledby="upgrades-title">
       <div class="dialog-header"><span id="armory-eyebrow" class="eyebrow">FIELD ARMORY / PERMANENT UPGRADES</span><button id="upgrade-close" class="icon-button" data-close="upgrades-dialog" aria-label="Close upgrades"><svg><use href="#i-close"/></svg></button></div>
-      <h2 id="upgrades-title">Make the next run count.</h2>
+      <h2 id="upgrades-title" class="art-heading"><img src="./assets/armory-9nWsjIHx.webp" alt="Field armory" loading="lazy"/></h2>
+      <p id="armory-caption">Make the next run count.</p>
       <p id="haven-status" class="haven-status" hidden></p>
       <div class="armory-bank"><span>AVAILABLE POINTS</span><strong id="upgrade-balance">0 PTS</strong></div>
       <p id="armory-intro" class="dialog-intro">Bank your score at the safe haven and after each completed run—even a loss. Upgrades apply on your next deployment or when you leave a haven.</p>
@@ -159,13 +160,13 @@
 
     <dialog id="levels-dialog" class="dialog levels-dialog" aria-labelledby="levels-title">
       <div class="dialog-header"><span class="eyebrow">CAMPAIGN MAP</span><button class="icon-button" data-close="levels-dialog" aria-label="Close level selection"><svg><use href="#i-close"/></svg></button></div>
-      <h2 id="levels-title">Ten sectors.<br/>One final warlord.</h2>
+      <h2 id="levels-title" class="art-heading"><img src="./assets/campaign-aMk370Ao.webp" alt="Campaign" loading="lazy"/></h2>
       <p class="dialog-intro">Secure a sector to unlock the next. Redeploy for up to three stars.</p>
       <div id="level-grid" class="level-grid"></div>
     </dialog>
 
     <dialog id="pause-dialog" class="dialog small-dialog" aria-labelledby="pause-title">
-      <span class="eyebrow">OPERATION SUSPENDED</span><h2 id="pause-title">Holding position.</h2><p>Your squad will resume exactly where it stopped.</p>
+      <span class="eyebrow">OPERATION SUSPENDED</span><h2 id="pause-title" class="art-heading"><img src="./assets/pause-BqLXtIUD.webp" alt="Hold position" loading="lazy"/></h2><p>Your squad will resume exactly where it stopped.</p>
       <button id="resume-button" class="primary-button"><span>RESUME ADVANCE</span><svg><use href="#i-arrow"/></svg></button>
       <button id="pause-retry" class="secondary-button">Restart sector</button>
       <button id="pause-home" class="text-button">Campaign map</button>
@@ -173,7 +174,7 @@
 
     <dialog id="settings-dialog" class="dialog small-dialog" aria-labelledby="settings-title">
       <div class="dialog-header"><span class="eyebrow">FIELD SETTINGS</span><button class="icon-button" data-close="settings-dialog" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div>
-      <h2 id="settings-title">System configuration.</h2>
+      <h2 id="settings-title" class="art-heading"><img src="./assets/systems-DxO3bRgZ.webp" alt="Systems configuration" loading="lazy"/></h2>
       <label class="setting"><span><strong>Sound effects</strong><small>Weapon and reinforcement cues</small></span><input id="sound-setting" type="checkbox" role="switch" checked/></label>
       <label class="setting"><span><strong>Low power mode</strong><small>Smaller pixel buffer, same mission</small></span><input id="quality-setting" type="checkbox" role="switch"/></label>
       <label class="setting"><span><strong>Gentle motion</strong><small>Reduced animation and steady tracers</small></span><input id="motion-setting" type="checkbox" role="switch"/></label>
@@ -184,7 +185,7 @@
 
     <dialog id="help-dialog" class="dialog small-dialog" aria-labelledby="help-title">
       <div class="dialog-header"><span class="eyebrow">FIELD MANUAL</span><button class="icon-button" data-close="help-dialog" aria-label="Close instructions"><svg><use href="#i-close"/></svg></button></div>
-      <h2 id="help-title">Strength in numbers.</h2>
+      <h2 id="help-title" class="art-heading"><img src="./assets/manual-5oGe11rm.webp" alt="Field manual" loading="lazy"/></h2>
       <ol class="help-list"><li><strong>Command the lane.</strong> Drag to the lane you want, tap arrows, or use ← → / A D. Your squad shoots the closest living hostile in its lane and weapon range. The warlord can be targeted from either lane.</li><li><strong>Dodge return fire.</strong> A red lane marker warns of an incoming burst. Switch lanes before it lands, or kill the shooter to cancel it. Enemy fire costs 1–6 squad strength; a barrier absorbs one burst. Dodging keeps your barrier.</li><li><strong>Recruit and rearm.</strong> + adds strength, × multiplies it, − removes it; strength caps at 300. A MECH adds 20 strength and +3 damage to every volley (up to three); on losses, infantry strength goes first. Pick up a short-range heavy scattergun or long-range plasma rifle; each replaces your current gun.</li><li><strong>Kill before contact.</strong> Shots reduce real HP. A dead enemy costs no strength or shield; surviving enemies cost only their remaining armor. Saws take 35%. A barrier blocks one hit, but not warlord contact. A ranged-killed warlord has no contact hit.</li><li><strong>Recover salvage.</strong> A defeated hostile awards +2 salvage; the warlord awards +5, once per kill. Ranged kills pay immediately. Survive the full 20–24-encounter route to finish the sector.</li></ol>
       <p class="settings-note"><strong>Watch the shoulders.</strong> Your squad fires at roadside zombies as well as its main target. Steer toward a horde to focus fire. Each zombie has 1 HP; survivors take up to 3 crew as you pass (less across the road). A barrier blocks one ambush. Clearing hordes earns kill score, not salvage.</p>
       <p class="settings-note"><strong>Rearm halfway.</strong> Each sector takes about 2½ minutes of active play. At the safe haven, your squad stops and your score is banked. Buy permanent damage or aim ranks, or resupply infantry, mechs, a tank, and a shield for this run only. Continue Run with the same crew. Shopping time does not advance the run; purchased recruits do not earn points when the run ends.</p>
